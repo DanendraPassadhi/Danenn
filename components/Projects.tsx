@@ -8,13 +8,16 @@ export function Projects() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [filter, setFilter] = useState<"all" | "github" | "dribbble">("all");
 
+  // Base URL for production (GitHub Pages)
+  const baseUrl = "/Danenn/";
+
   const projects = [
     {
       id: 1,
       title: "Techno Rules",
       description:
         "The student code of conduct information system for Information Technology students was developed through project-based learning as a final campus assignment.",
-      image: "/assets/image/technorules.jpg",
+      image: `${baseUrl}technorules.jpg`,
       tags: [
         "Team Project",
         "PHP",
@@ -34,7 +37,7 @@ export function Projects() {
       title: "Simapres",
       description:
         " A web-based information system designed to manage and monitor students' academic and non-academic achievements.",
-      image: "/assets/image/simapres.png",
+      image: `${baseUrl}simapres.png`,
       tags: [
         "Team Project",
         "PHP",
@@ -54,7 +57,7 @@ export function Projects() {
       id: 3,
       title: "Sawit-Track Web App",
       description: "- Soon -",
-      image: "/assets/image/sawit.png",
+      image: `${baseUrl}sawit.png`,
       tags: [
         "Team Project",
         "React.js",
@@ -73,7 +76,7 @@ export function Projects() {
       id: 4,
       title: "UI Design of Lastfoods",
       description: "Lastfoods is anti waste food delivery app.",
-      image: "/assets/image/lastfoods.jpg",
+      image: `${baseUrl}lastfoods.jpg`,
       tags: ["Figma"],
       github: null,
       demo: "https://www.figma.com/proto/9NxmBfAIUgl0c9zhWznHk6/Lastfoods?node-id=1239-3983&t=tfUs0UQvzmSkXK1E-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A6&starting-point-node-id=1239%3A3983&show-proto-sidebar=1",
@@ -86,7 +89,7 @@ export function Projects() {
       title: "UI Design of Sentinel Apps",
       description:
         "Sentinel is a mobile notification app for natural disasters.",
-      image: "/assets/image/sentinel.png",
+      image: `${baseUrl}sentinel.png`,
       tags: ["Team Project", "Figma"],
       github: null,
       demo: "https://www.figma.com/proto/RXD1W2Sb3PDdajfD9rHxNM/Sentinel?node-id=257-11478&p=f&t=PMsYOYBjbywzKSv3-1&scaling=scale-down&content-scaling=fixed&page-id=256%3A2831&starting-point-node-id=257%3A11478&show-proto-sidebar=1",
@@ -98,7 +101,7 @@ export function Projects() {
       id: 6,
       title: "UI Design of Web Zernia",
       description: "Zernia is an tracking electricty for home.",
-      image: "/assets/image/zernia.png",
+      image: `${baseUrl}zernia.png`,
       tags: ["Team Project", "Figma"],
       github: null,
       demo: "https://www.figma.com/proto/0JE02aEBu4inz5dprjSiYQ/TFS?node-id=2180-5151&p=f&t=mEt3WTPoLFKaksHK-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A9&starting-point-node-id=2180%3A5151&show-proto-sidebar=1",
