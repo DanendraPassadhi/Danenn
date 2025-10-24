@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Database, Globe, Smartphone } from "lucide-react";
+import { Code2, Palette, Video, Camera } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 export function About() {
@@ -10,26 +10,26 @@ export function About() {
   const skills = [
     {
       icon: Code2,
-      title: "Frontend Development",
-      description: "React, Next.js, TypeScript, Tailwind CSS",
+      title: "Programming",
+      description: "JavaScript, PHP, Java, Dart, Laravel, FLutter, React JS",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: Database,
-      title: "Backend Development",
-      description: "Node.js, Python, PostgreSQL, MongoDB",
+      icon: Code2,
+      title: "Machine Learning",
+      description: "Python, Jupyter, TensorFlow, Keras, Scikit-Learn, Pandas, CV2, etc.",
       color: "from-green-500 to-emerald-500",
     },
     {
-      icon: Globe,
-      title: "Web Technologies",
-      description: "REST APIs, GraphQL, WebSockets",
+      icon: Palette,
+      title: "Design",
+      description: "Figma, Canva, Adobe Photoshop",
       color: "from-purple-500 to-pink-500",
     },
     {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "React Native, Flutter, Progressive Web Apps",
+      icon: Camera,
+      title: "Photography & Videography",
+      description: "Lightroom, Snapseed, Capcut, Premiere Pro,",
       color: "from-orange-500 to-red-500",
     },
   ];
@@ -110,14 +110,14 @@ export function About() {
             <p className="text-foreground/80 leading-relaxed">
               I'm a dedicated IT student with a passion for creating innovative
               solutions through code. Currently pursuing my degree in Computer
-              Science, I specialize in full-stack development with a focus on
+              Science, I specialize in Web development with a focus on
               modern web technologies.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              With experience in building responsive web applications, I enjoy
-              turning complex problems into simple, beautiful, and intuitive
-              designs. When I'm not coding, you'll find me exploring new
-              technologies or contributing to open-source projects.
+              I'm currently learning Machine Learning and have a strong interest
+              in this field. Beyond coding, I also enjoy design, photography, and 
+              videography, which help me bring creative perspectives to my technical 
+              work. I also explore new technologies or contribute to open-source projects.
             </p>
             <motion.div
               className="flex flex-wrap gap-2 pt-4"
@@ -127,11 +127,11 @@ export function About() {
             >
               {[
                 "JavaScript",
-                "TypeScript",
-                "React",
-                "Node.js",
+                "PHP",
+                "React JS",
+                "Laravel",
                 "Python",
-                "Tailwind CSS",
+                "Flutter",
               ].map((tech, index) => (
                 <motion.span
                   key={tech}
