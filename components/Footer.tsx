@@ -1,15 +1,52 @@
 import { motion } from "framer-motion";
-import { ins } from "framer-motion/client";
-import { Github, Linkedin, Twitter, Mail, Heart, Instagram } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  Heart,
+  Instagram,
+  Music,
+} from "lucide-react";
+import { useState, useRef } from "react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const playLofiMusic = () => {
+    if (audioRef.current) {
+      if (isPlayingMusic) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlayingMusic(!isPlayingMusic);
+    }
+  };
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/DanendraPassadhi", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/danendra-nayaka-passadhi/", label: "LinkedIn" },
-    { icon: Instagram, href: "https://instagram.com/danendra71prime", label: "Instagram" },
-    { icon: Mail, href: "mailto:danendra.passadhi71@gmail.com", label: "Email" },
+    {
+      icon: Github,
+      href: "https://github.com/DanendraPassadhi",
+      label: "GitHub",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/danendra-nayaka-passadhi/",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/danendra71prime",
+      label: "Instagram",
+    },
+    {
+      icon: Mail,
+      href: "mailto:danendra.passadhi71@gmail.com",
+      label: "Email",
+    },
   ];
 
   const quickLinks = [
@@ -41,13 +78,12 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl mb-4">
+            <h3 className="text-xl mb-4 text-foreground font-bold">
               {"<"}Danenn. {"/>"}
             </h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
-              IT Student and Tech Enthusiast, 
-              passionate about building exceptional digital experiences, 
-              with a current focus on Machine Learning.
+              IT Student and Tech Enthusiast, passionate about building exceptional
+              digital experiences, with a current focus on Software Development and Machine Learning.
             </p>
           </motion.div>
 
@@ -90,7 +126,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="w-10 h-10 bg-secondary/50 rounded-lg flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground transition-all shadow-sm hover:shadow-md transition-smooth"
                   whileHover={{ y: -5, scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, scale: 0 }}
@@ -153,13 +189,14 @@ export function Footer() {
 
       {/* Scroll to top button */}
       <motion.button
-        className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:shadow-xl z-50 transition-smooth"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: false }}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.1, rotate: 360 }}
         whileTap={{ scale: 0.9 }}
+        transition={{ rotate: { duration: 0.5 } }}
       >
         <svg
           width="20"
@@ -174,6 +211,27 @@ export function Footer() {
           <polyline points="18 15 12 9 6 15" />
         </svg>
       </motion.button>
+
+      {/* Music button */}
+      <motion.button
+        className={`fixed bottom-8 right-24 w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 transition-all transition-smooth ${
+          isPlayingMusic
+            ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-green-500/30"
+            : "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-primary/30 hover:shadow-primary/50"
+        }`}
+        onClick={playLofiMusic}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        title="Play Lofi Music on Spotify"
+      >
+        <Music size={20} />
+      </motion.button>
+
+      {/* Hidden audio element for lofi music */}
+      <audio ref={audioRef} src="/Danenn/hindia-kita_ ke_sana.mp3" loop />
     </footer>
   );
 }

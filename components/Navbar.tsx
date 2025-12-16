@@ -48,7 +48,7 @@ export function Navbar() {
           <motion.a
             href="#home"
             onClick={(e) => scrollToSection(e, "#home")}
-            className="text-xl text-foreground"
+            className="text-xl text-foreground transition-smooth"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -62,13 +62,16 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-foreground/80 hover:text-foreground transition-colors"
+                className="group text-foreground/80 hover:text-foreground transition-colors transition-smooth"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
-                {item.name}
+                <span className="relative">
+                  {item.name}
+                  <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-smooth group-hover:w-full" />
+                </span>
               </motion.a>
             ))}
           </div>

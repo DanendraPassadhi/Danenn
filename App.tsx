@@ -21,15 +21,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="bg-background text-foreground scroll-smooth">
       <Navbar />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="flex flex-col">
+        <main className="pt-16 snap-y snap-mandatory flex-1">
+          <Hero />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

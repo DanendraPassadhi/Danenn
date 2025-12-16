@@ -12,12 +12,13 @@ export function About() {
       icon: Code2,
       title: "Programming",
       description: "JavaScript, PHP, Java, Dart, Laravel, FLutter, React JS",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-indigo-500 to-purple-500",
     },
     {
       icon: Code2,
       title: "Machine Learning",
-      description: "Python, Jupyter, TensorFlow, Keras, Scikit-Learn, Pandas, CV2, etc.",
+      description:
+        "Python, Jupyter, TensorFlow, Keras, Scikit-Learn, Pandas, CV2, etc.",
       color: "from-green-500 to-emerald-500",
     },
     {
@@ -29,7 +30,7 @@ export function About() {
     {
       icon: Camera,
       title: "Photography & Videography",
-      description: "Lightroom, Snapseed, Capcut, Premiere Pro,",
+      description: "Lightroom, Snapseed, Capcut, Premiere Pro, VN Video Editor",
       color: "from-orange-500 to-red-500",
     },
   ];
@@ -50,7 +51,11 @@ export function About() {
   };
 
   return (
-    <section id="about" className="py-20 bg-secondary/10" ref={ref}>
+    <section
+      id="about"
+      className="py-20 bg-secondary/10 snap-start snap-always"
+      ref={ref}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,14 +115,15 @@ export function About() {
             <p className="text-foreground/80 leading-relaxed">
               I'm a dedicated IT student with a passion for creating innovative
               solutions through code. Currently pursuing my degree in Computer
-              Science, I specialize in Web development with a focus on
-              modern web technologies.
+              Science, I specialize in Web development with a focus on modern
+              web technologies.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               I'm currently learning Machine Learning and have a strong interest
-              in this field. Beyond coding, I also enjoy design, photography, and 
-              videography, which help me bring creative perspectives to my technical 
-              work. I also explore new technologies or contribute to open-source projects.
+              in software development. Beyond coding, I also enjoy design,
+              photography, and videography, which help me bring creative
+              perspectives to my technical work. I also explore new technologies
+              or contribute to open-source projects.
             </p>
             <motion.div
               className="flex flex-wrap gap-2 pt-4"
@@ -132,14 +138,26 @@ export function About() {
                 "Laravel",
                 "Python",
                 "Flutter",
+                "Node JS",
+                "Mongo DB",
+                "MySQL",
+                "SQL Server",
+                "Firebase",
+                "Git",
+                "GitHub",
               ].map((tech, index) => (
                 <motion.span
                   key={tech}
-                  className="px-3 py-1 bg-primary/10 text-foreground/90 rounded-full text-sm"
+                  className="px-3 py-1 bg-primary/10 text-foreground/90 rounded-full text-sm shadow-sm"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, backgroundColor: "var(--primary)" }}
+                  whileHover={{
+                    scale: 1.08,
+                    backgroundColor: "var(--primary)",
+                  }}
+                  title={`Skill: ${tech}`}
+                  role="button"
                 >
                   {tech}
                 </motion.span>

@@ -10,14 +10,14 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #030213;
+  --primary: #6366f1;
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.95 0.0058 264.53);
   --secondary-foreground: #030213;
   --muted: #ececf0;
   --muted-foreground: #717182;
-  --accent: #e9ebef;
-  --accent-foreground: #030213;
+  --accent: #8b5cf6;
+  --accent-foreground: oklch(1 0 0);
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
   --border: rgba(0, 0, 0, 0.1);
@@ -50,13 +50,13 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.65 0.2 264);
+  --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.65 0.2 290);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -126,6 +126,10 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    font-family: "Inter", sans-serif;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -188,4 +192,65 @@
 
 html {
   font-size: var(--font-size);
+}
+
+/* UI helpers and accessibility-aware motion */
+@layer utilities {
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .card-glow {
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  }
+
+  .cta-shadow {
+    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
+  }
+
+  /* small interactive glow used for CTAs and icons */
+  .interactive-glow {
+    transition: box-shadow 260ms cubic-bezier(0.2, 0.9, 0.2, 1),
+      transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+
+  .interactive-glow:hover {
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.12),
+      0 2px 8px rgba(2, 6, 23, 0.06);
+    transform: translateY(-3px);
+  }
+
+  /* subtle pulse used to draw attention without being distracting */
+  @keyframes pulse-subtle {
+    0% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+  }
+
+  .pulse-subtle {
+    animation: pulse-subtle 2.6s ease-in-out infinite;
+  }
+
+  .transition-smooth {
+    transition: all 250ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
