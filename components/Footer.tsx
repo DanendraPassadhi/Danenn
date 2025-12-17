@@ -82,8 +82,9 @@ export function Footer() {
               {"<"}Danenn. {"/>"}
             </h3>
             <p className="text-foreground/70 text-sm leading-relaxed">
-              IT Student and Tech Enthusiast, passionate about building exceptional
-              digital experiences, with a current focus on Software Development and Machine Learning.
+              IT Student and Tech Enthusiast, passionate about building
+              exceptional digital experiences, with a current focus on Software
+              Development and Machine Learning.
             </p>
           </motion.div>
 
@@ -189,7 +190,7 @@ export function Footer() {
 
       {/* Scroll to top button */}
       <motion.button
-        className="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:shadow-xl z-50 transition-smooth"
+        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:shadow-xl z-50 transition-smooth"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -214,7 +215,7 @@ export function Footer() {
 
       {/* Music button */}
       <motion.button
-        className={`fixed bottom-8 right-24 w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 transition-all transition-smooth ${
+        className={`fixed bottom-16 right-4 sm:bottom-8 sm:right-24 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg z-50 transition-all transition-smooth ${
           isPlayingMusic
             ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-green-500/30"
             : "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-primary/30 hover:shadow-primary/50"
@@ -225,9 +226,9 @@ export function Footer() {
         viewport={{ once: false }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        title="Play Lofi Music on Spotify"
+        title="Play Lofi Music"
       >
-        <Music size={20} />
+        <Music size={18} className="sm:w-5 sm:h-5" />
       </motion.button>
 
       {/* Hidden audio element for lofi music */}

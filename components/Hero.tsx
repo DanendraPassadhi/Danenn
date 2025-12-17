@@ -134,7 +134,7 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
-          className="mb-6 text-5xl sm:text-6xl lg:text-7xl"
+          className="mb-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -156,7 +156,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mb-8 text-xl sm:text-2xl text-foreground/70 max-w-3xl mx-auto"
+          className="mb-8 text-base sm:text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

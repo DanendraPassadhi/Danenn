@@ -29,16 +29,10 @@ export function Projects() {
       description:
         "The student code of conduct information system for Information Technology students was developed through project-based learning as a final campus assignment.",
       image: `${baseUrl}technorules.jpg`,
-      tags: [
-        "Team Project",
-        "PHP",
-        "SQL Server",
-        "Tailwind",
-        "Figma",
-      ],
+      tags: ["Team Project", "PHP", "SQL Server", "Tailwind", "Figma"],
       github: "https://github.com/a6iyyu/tatib",
       demo: null,
-      figma: null,
+      figma: "https://www.figma.com/proto/ICqKUncYWpsvQqw1DRxBRQ/TECHNO-RULES-PBL-?node-id=718-4007&starting-point-node-id=718%3A4007&show-proto-sidebar=1&t=CJamp7SZhZwix6RZ-1",
       type: "github" as const,
       stars: 1,
       forks: 3,
@@ -49,17 +43,10 @@ export function Projects() {
       description:
         " A web-based information system designed to manage and monitor students' academic and non-academic achievements.",
       image: `${baseUrl}simapres.png`,
-      tags: [
-        "Team Project",
-        "PHP",
-        "Laravel",
-        "MySql",
-        "Bootstrap",
-        "Figma",
-      ],
+      tags: ["Team Project", "PHP", "Laravel", "MySql", "Bootstrap", "Figma"],
       github: "https://github.com/anugerahhrama/simapres-app",
       demo: null,
-      figma: null,
+      figma: "https://www.figma.com/design/XAVpYOZprJduPQJMDnqfHU/SIMAPRES--PBL-?node-id=2-12&t=DrFJqjUV9oHyaN5Z-1",
       type: "github" as const,
       stars: 1,
       forks: 2,
@@ -69,16 +56,10 @@ export function Projects() {
       title: "Sawit-Track Web App",
       description: "- Soon -",
       image: `${baseUrl}sawit.png`,
-      tags: [
-        "Team Project",
-        "React.js",
-        "MongoDB",
-        "Firebase",
-        "Figma",
-      ],
+      tags: ["Team Project", "React.js", "MongoDB", "Firebase", "Figma"],
       github: null,
       demo: null,
-      figma: null,
+      figma: "https://www.figma.com/design/cPHH34QYTGrcMy5ceH8pqA/PalmProject?node-id=1-10&t=Twfn84npwWBBRyEN-1",
       type: "github" as const,
       stars: 3,
       forks: 3,
@@ -143,7 +124,8 @@ export function Projects() {
     {
       id: 8,
       title: "UI Design of Aksara Apps",
-      description: "Aksara is interactive storytelling and literacy applications based on gamification and artificial intelligence to improve literacy and support quality education.",
+      description:
+        "Aksara is interactive storytelling and literacy applications based on gamification and artificial intelligence to improve literacy and support quality education.",
       image: `${baseUrl}aksara.jpg`,
       tags: ["Figma"],
       github: null,
@@ -161,7 +143,8 @@ export function Projects() {
       image: `${baseUrl}e-publishing.png`,
       tags: ["Team Project", "Figma"],
       github: null,
-      figma: "https://www.figma.com/proto/SVu5N3P8zfCI4pYabcMrD9/E-Publishing?node-id=6-700&p=f&t=8kL6OcUCP3vdNGPL-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A103&starting-point-node-id=6%3A700&show-proto-sidebar=1",
+      figma:
+        "https://www.figma.com/proto/SVu5N3P8zfCI4pYabcMrD9/E-Publishing?node-id=6-700&p=f&t=8kL6OcUCP3vdNGPL-1&scaling=scale-down&content-scaling=fixed&page-id=2%3A103&starting-point-node-id=6%3A700&show-proto-sidebar=1",
       demo: null,
       type: "dribbble" as const,
       stars: null,
@@ -191,6 +174,20 @@ export function Projects() {
       github: "https://github.com/DanendraPassadhi/Vero-Bot",
       figma: null,
       demo: "https://discord.com/oauth2/authorize?client_id=1438023516396982422",
+      type: "github" as const,
+      stars: null,
+      forks: null,
+    },
+    {
+      id: 12,
+      title: "JAWARA PINTAR Apps",
+      description:
+        "A Flutter application for managing resident data, finances, and a marketplace at the neighborhood (RT/RW) level.",
+      image: `${baseUrl}jawara.png`,
+      tags: ["Flutter", "Dart"],
+      github: "https://github.com/jioooo20/mobile-kel3",
+      figma: null,
+      demo: null,
       type: "github" as const,
       stars: null,
       forks: null,
@@ -263,7 +260,7 @@ export function Projects() {
 
             {/* Filter Buttons */}
             <motion.div
-              className="flex items-center justify-center gap-4 flex-wrap"
+              className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap px-2"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.4 }}
@@ -281,7 +278,7 @@ export function Projects() {
                 <motion.button
                   key={btn.value}
                   onClick={() => setFilter(btn.value)}
-                  className={`px-6 py-2 rounded-lg transition-all transition-smooth group flex items-center gap-2 ${
+                  className={`px-3 sm:px-6 py-2 rounded-lg transition-all transition-smooth group flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${
                     filter === btn.value
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary text-secondary-foreground border border-border"
@@ -289,7 +286,9 @@ export function Projects() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  {btn.icon && <btn.icon size={18} />}
+                  {btn.icon && (
+                    <btn.icon size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  )}
                   <span className="font-medium">{btn.label}</span>
                 </motion.button>
               ))}

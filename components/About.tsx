@@ -170,7 +170,7 @@ export function About() {
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {skills.map((skill, index) => (
             <motion.div
